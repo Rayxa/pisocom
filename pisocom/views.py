@@ -30,4 +30,4 @@ def logout(request):
 	return render_to_response('logout.html')
 
 def main(request):
-		return render_to_response('base.html')
+		return render_to_response('index.html')
