@@ -1,4 +1,4 @@
-"""pisocom URL Configuration
+"""poyecto1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.9/topics/http/urls/
@@ -19,4 +19,10 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^cuenta/login/$', 'pisocom.views.login'),
+    url(r'^cuenta/auth/$', 'pisocom.views.auth_view'),
+    url(r'^cuenta/logout/$', 'pisocom.views.logout'),
+    url(r'^cuenta/loggedin/$', 'pisocom.views.loggedin'),
+    url(r'^cuenta/invalid/$', 'pisocom.views.invalid_login'),
+    url(r'^$', 'pisocom.views.main'),
 ]
