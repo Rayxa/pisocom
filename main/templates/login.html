@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>los datos introducidos son erroneos</p>
+
+{% endif %}
+<form action="/cuenta/auth/" method="post" > {% csrf_token %}
+<p>usuario:</p>
+<input type="text" name="username" value="" id="username">
+<p>contraseña:</p>
+<input type="password" name="password" value="" id="password">
+	
+<input type="submit" value="entrar">
+</form>
+
+
+
+{% endblock %}
