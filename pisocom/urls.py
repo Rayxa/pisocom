@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from main import urls as casa_urls
+from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -25,4 +27,5 @@ urlpatterns = [
     url(r'^cuenta/loggedin/$', 'pisocom.views.loggedin'),
     url(r'^cuenta/invalid/$', 'pisocom.views.invalid_login'),
     url(r'^$', 'pisocom.views.main'),
+    url(r'^casa/', include(casa_urls)),
 ]

@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import casa, descripcion
 
-# Register your models here.
+admin.site.register(casa)
+admin.site.register(descripcion)
