@@ -1,12 +1,30 @@
+
 {% extends 'pisocom/base.html' %}
 
-{% block title %}Create an account{% endblock %}
+{% load bootstrap3 %}
+
+{% block title %}Registrarse{% endblock %}
 
 {% block content %}
-	<h1>Create an account</h1>
-	<form method="POST">
+	<form method="POST" class="registration-form">
+		<h2>Registrarse</h2>
 		{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Create the account">
+
+		{% for field in form %}
+			{% if field.label == "Captcha" %} 
+				<hr> 
+				{% bootstrap_field field %}
+				<hr>
+			{% else %}
+				{% bootstrap_field field %}
+			{% endif %}
+        {% endfor %}
+		
+		<div class="centered">
+			<button type="submit" class="btn btn-primary">Crear cuenta</button>
+		</div>
+		
+
+		
     </form>
 {% endblock%}

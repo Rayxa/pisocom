@@ -1,0 +1,31 @@
+body {
+	background-color: rgb(240,240,240)
+}
+
+.centered {
+	text-align:center;
+}
+
+hr {
+	height: 1px;
+    background: rgb(200,200,200);
+}
+
+.registration-form {
+	background-color: white;
+	border-radius: 10px;
+	padding: 20px 40px 20px 40px;
+	margin: auto;
+	width: 45%;
+}
+
+.registration-form h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.registration-form button {
+	margin-top: 20px;
+}
+
+
