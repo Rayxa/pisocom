@@ -1,4 +1,4 @@
-﻿from django import forms
+from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from captcha.fields import CaptchaField
@@ -19,13 +19,11 @@ class RegistrationForm(UserCreationForm):
         error_messages={'required': 'Debes aceptar las condiciones de uso para continuar'}
     )
     
-    class Meta:
-        model = User
-        fields = ("username", "email", "password1", "password2", "captcha", "tos")
-    
     def save(self, commit=True):
         user = super(RegistrationForm, self).save(commit=False)
         user.email = self.cleaned_data["email"]
         if commit:
             user.save()
         return user
+        
+        
