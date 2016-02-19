@@ -1,17 +1,16 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.shortcuts import redirect
-from .forms import RegistrationForm
+from . import forms
 
 def register(request):
 	if request.method == "POST":
-		form = RegistrationForm(request.POST);
+		form = forms.RegistrationForm(request.POST);
 		if form.is_valid():
-			new_user = form.save(commit=False)
-			new_user.save();
-			return redirect('main.views.user_created')
-	else: 
-		form = RegistrationForm();
+			new_user = form.save(commit=True)
+			return redirect('pisocom.views.user_created')
+	else:
+		form = forms.RegistrationForm();
 	return render(request, 'pisocom/register.html', {'form': form})
 
 def user_created(request):

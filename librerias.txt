@@ -1,0 +1,5 @@
+>> Django-simple-patcha
+pip install django-simple-captcha
+
+>> Django-bootstrap3
+pip install django-bootstrap3
