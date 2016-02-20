@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+	<h1> En primer lugar, indica la direccion de la casa: </h1>
+	<form method="POST"> 
+		{% csrf_token %}
+		{% bootstrap_form form layout='horizontal' %}
+		<input type="submit" value="Continuar">
+	</form>
+{% endblock %}
