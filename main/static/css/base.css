@@ -1,0 +1,47 @@
+body {
+	padding: 20px;
+	background-color: rgb(240,240,240);
+	background-image: url('../resources/stardust.png');
+}
+
+hr {
+	margin: 15px;
+}
+
+.container {
+	background-color: rgb(245,245,245);
+	border: solid 1px rgb(220,220,220);
+}
+
+
+.login {
+	width: 400px;
+	padding: 20px 30px 5px 30px;
+}
+
+.login > a {
+	display:block;
+	text-align:center;
+	margin-bottom: 15px;
+}
+
+.message {
+	max-width: 700px;
+	padding: 5px 40px 20px 40px;
+	text-align: center;
+}
+
+.password-reset {
+	max-width: 700px;
+	padding: 10px 40px 20px 40px;
+}
+
+.register {
+	width: 700px;
+	padding: 25px 30px 5px 30px;
+}
+
+.form-buttons {
+	padding: 10px 20px 20px 20px;
+	text-align: center;
+}
