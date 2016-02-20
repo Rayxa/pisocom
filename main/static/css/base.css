@@ -1,42 +1,47 @@
-footer{
-	background: #5cb85c;
-}
-
 body {
-	padding: 0px 10px 10px 10px;
-	background-color: rgb(240,240,240)
-}
-
-.centered {
-	text-align:center;
+	padding: 20px;
+	background-color: rgb(240,240,240);
+	background-image: url('../resources/stardust.png');
 }
 
 hr {
-	height: 1px;
-    background: rgb(200,200,200);
+	margin: 15px;
 }
 
-/*------ Formulario de registro -------*/
-
-.registration-form {
-	background-color: white;
-	border-radius: 5px;
-	padding: 20px 40px 20px 40px;
-	margin: auto;
-	margin-bottom: 20px;
-	width: 45%;
+.container {
+	background-color: rgb(245,245,245);
+	border: solid 1px rgb(220,220,220);
 }
 
-.registration-form h2 {
+
+.login {
+	width: 400px;
+	padding: 20px 30px 5px 30px;
+}
+
+.login > a {
+	display:block;
+	text-align:center;
+	margin-bottom: 15px;
+}
+
+.message {
+	max-width: 700px;
+	padding: 5px 40px 20px 40px;
 	text-align: center;
-	margin-bottom: 30px;
 }
 
-.message-box {
-	background-color: white;
-	border-radius: 10px;
-	margin: auto;
-	padding: 20px;
+.password-reset {
+	max-width: 700px;
+	padding: 10px 40px 20px 40px;
+}
+
+.register {
+	width: 700px;
+	padding: 25px 30px 5px 30px;
+}
+
+.form-buttons {
+	padding: 10px 20px 20px 20px;
 	text-align: center;
-	width: 30%;
 }
