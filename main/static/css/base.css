@@ -13,15 +13,14 @@ hr {
 	border: solid 1px rgb(220,220,220);
 }
 
-
 .login {
-	width: 400px;
+	max-width: 400px;
 	padding: 20px 30px 5px 30px;
 }
 
 .login > a {
-	display:block;
-	text-align:center;
+	display: block;
+	text-align: center;
 	margin-bottom: 15px;
 }
 
@@ -37,7 +36,7 @@ hr {
 }
 
 .register {
-	width: 700px;
+	width: 600px;
 	padding: 25px 30px 5px 30px;
 }
 

@@ -5,45 +5,14 @@
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-      	<!-- <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}" > -->
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
   <body>
-    <!-- <div class="container"> <br>
-    			<header>
-    					<nav class="navbar navbar-inverse">
-    						<div class="container-fluid">
-    							<div class="navbar-header">
-    								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
-    									<span class="sr-only">Menu</span>
-    									<span class="icon-bar"></span>
-    									<span class="icon-bar"></span>
-    									<span class="icon-bar"></span>
-    								</button>
-    								<a href="/" class="navbar-brand">Pisocom</a>
-    							</div>
-    							<div class="collapse navbar-collapse" id="navbar1">
-    								<ul class="nav navbar-nav">
-    									<li><a href="/casa/nueva/">Regcasa</a></li>
-    									<li><a href="/cuenta/login">Iniciar</a></li>
-    								</ul>
-    							</div>
-    						</div>
-    					</nav>
-    			</header>
-    </div> -->
 
     </div>
         {% block content %}
         {% endblock %}
     </div>
-
-
-    <!-- <footer>
-			<div class="container">
-				<h4>Pie de página</h4>
-			</div>
-		</footer> -->
 
   </body>
 </html>
