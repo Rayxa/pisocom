@@ -1,6 +1,6 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
-# Profile with information about a user
 class Profile(models.Model):
 
     GENDER_CHOICES = (
@@ -22,11 +22,16 @@ class Profile(models.Model):
         ('O', 'Otros'),
     )
 
+    # Expresión regular para validar el número de teléfono
+    phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$', message="Número de teléfono inválido (debe tener de 9 a 15 dígitos)")
+
+    # Usuario asociado al perfil (un perfil por usuario)
     user = models.OneToOneField('auth.User', models.CASCADE)
 
+    # Campos del perfil
     firstName = models.CharField(max_length=35, blank=True, verbose_name='Nombre')
     lastName = models.CharField(max_length=35, blank=True, verbose_name='Apellidos')
-    telephone = models.CharField(max_length=15, blank=True, verbose_name='Número de teléfono')
+    telephone = models.CharField(max_length=15, validators=[phone_regex], blank=True, verbose_name='Número de teléfono')
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True, verbose_name="Sexo")
 
     birthdate = models.DateField(blank=True, null=True, verbose_name="Fecha de nacimiento")

@@ -5,12 +5,17 @@
 {% block title %}Editar perfil{% endblock %}
 
 {% block content %}
-  <form method="POST" class="container">
+<form method="POST" class="edit-profile-form container">
 
-    {% csrf_token %}
+  {% csrf_token %}
+  <h3>Edita tu perfil</h3><hr>
 
-    {% bootstrap_form form %}
-    {% bootstrap_button "Confirmar cambios" button_type="submit" button_class="btn-primary"%}
+  {% bootstrap_form form layout='horizontal'%}
+
+  <div class='text-right'>
+    {% bootstrap_button "Guardar cambios" button_type="submit" button_class="btn-primary"%}
     {% bootstrap_button "Cancelar" button_type="link" href='/' button_class="btn-default"%}
+  </div>
+
 </form>
 {% endblock %}
