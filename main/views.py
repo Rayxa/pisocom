@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .forms import casaForm
 
-# Create your views here.
+def search(request):
+	form = casaForm()
+	return render(request, 'search.html', {'form': form})
