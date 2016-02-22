@@ -1,122 +1,52 @@
-{% load staticfiles %}
-<!DOCTYPE html>
+﻿{% load staticfiles %}
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>{% block title %} pagina principal {% endblock %}</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-	<link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}" >
-	<link rel="stylesheet" href="{% static "css/base.css" %}">
-</head>
-	<body>
-		<!-- CABECERA DE LA PAGINA WEB -->
-		
-		<div class="container">
-		<br>
-			<header>
-					
-					<nav class="navbar navbar-inverse">
-						<div class="container-fluid">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
-									<span class="sr-only">Menu</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-								<a href="/" class="navbar-brand" >Pisocom</a>
-							</div>
-							<div class="collapse navbar-collapse" id="navbar1">
-								<ul class="nav navbar-nav">
-									<li><a href="/casa/nueva/">regcasa</a></li>
-									<li><a href="/cuenta/login">iniciar</a></li>
-									
-									
-								</ul>
-							</div>
-						</div>
-					</nav>
-				
-			</header>
-		</div>
-		
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    </head>
+  <body>
 
-		<!-- MAIN DE LA PAGINA WEB -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Pisocom</a>
+        </div>
 
-		<div class="container">
-			
-			<section class="main row">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <!-- Right part of the navigation menu -->
+          <ul class="nav navbar-nav">
+            {% if user.is_authenticated %}
+              <li><a href="/profile/edit">Tu perfil</a></li>
+              <li><a href="/">Añadir casa</a></li>
+            {% endif %}
+          </ul>
+          <!-- Right part of the navigation menu -->
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li><a href="/accounts/logout">Cerrar sesión</a></li>
+            {% else %}
+              <li><a href="/accounts/login">Iniciar sesión</a></li>
+            {% endif %}
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
-				
-				<article class="col-xs-12 col-sm-8 col-md-9" >
-					{% block content %}<!-- contenido -->
-					
-					{% endblock %}
-				</article>
-				
+    <div class="box">
+        {% block content %}
+        {% endblock %}
+    </div>
 
-				
-				<aside class="col-xs-12 col-sm-4 col-md-3">
-					{% block sidebar %}<!-- ultimas novedades -->
-
-					{% endblock %}
-				</aside>
-				
-
-			</section>
-
-			<div class="row">
-				<div class="colo1 col-xs-12 col-sm-6 col-md-3">
-					{% block columna1 %}<!-- columnas opcionales -->
-					 
-					{% endblock %}
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-3">
-					{% block columna2 %}<!-- columnas opcionales -->
-					 
-					{% endblock %}
-				</div>
-				
-				<div class="clearfix visible-sm-block"></div>
-
-				<div class="colo1 col-xs-12 col-sm-6 col-md-3">
-					{% block columna3 %}<!-- columnas opcionales -->
-					 
-					{% endblock %}
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-3">
-					{% block columna4 %}<!-- columnas opcionales -->
- 
-					{% endblock %}
-				</div>
-			</div>
-
-
-		</div>
-		
-		<footer>
-			<div class="container">
-				<h4>aqui van los copy rigth y de mas </h4>
-
-			</div>
-		</footer>
-
-			
-		<img src="{% static "naruto.jpg" %}" alt="My image"/>
-
-
-
-
-
-
-
-
-
-
-		<!-- ultimas versiones de bootstrap y jqury -->
-
-		<script src="http://code.jquery.com/jquery-1.12.0.min.js" ></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
-	</body>
+  </body>
 </html>

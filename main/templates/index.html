@@ -1,48 +1,16 @@
 {% extends "base.html" %}
 
-					{% block content %}<!-- contenido -->
-						<p>
-							<h3> cuerpo</h3>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aliquam quod ex doloribus consequuntur accusantium quis, iusto eaque facilis vitae voluptate asperiores, repellat incidunt illum iste, a voluptas quia hic?
-						</p>
-					{% endblock %}
+{% load bootstrap3 %}
 
-					{% block sidebar %}<!-- ultimas novedades -->
-						<p>
-							<h3>ultmias noticias</h3>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus rem sed dignissimos provident aliquid iure cum, quibusdam aut ex obcaecati commodi nemo dolore possimus harum, assumenda quidem quo vel voluptatem.
-						</p>
-					{% endblock %}
+{% block content %}
 
+<div class="container">
+	<h2>Hola de nuevo, {{user.username}}!</h2>
+	<p><a href="/profile/edit" disabled=true>Editar perfil</a></p>
+	<p><a class="text-muted" disabled=true>Añadir casa</a></p>
+	<p><a class="text-muted" disabled=true>Buscar casa</a></p>
+	<p><a class="text-muted" disabled=true>Buscar compañeros de piso</a></p>
+	<p><a href="/accounts/logout">Cerrar sesión</a></p>
+</div>
 
-					{% block columna1 %}<!-- columnas opcionales -->
-					<p>
-						<h3>columna 1</h3>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum veniam, ratione? Omnis officiis, doloremque quos suscipit excepturi libero nemo et, modi aspernatur fugit nobis iusto. Modi quidem, illo id impedit!
-					</p>
-					{% endblock %}
-			
-				
-					{% block columna2 %}<!-- columnas opcionales -->
-					<p>
-						<h3>columna 2</h3>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, sed! Earum at perferendis neque. Eaque, qui, enim eos iusto iste aut ut fugit voluptatem distinctio sequi doloremque modi, temporibus reprehenderit.
-					</p>
-					{% endblock %}
-			
-			
-					{% block columna3 %}<!-- columnas opcionales -->
-					<p>
-						<h3>columna 3</h3>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque officia corporis vero dicta, omnis tempora quod id, adipisci odio, ducimus quam totam pariatur voluptas facere dolores. Sequi tempore hic, magnam!
-					</p>
-					{% endblock %}
-			
-				
-					{% block columna4 %}<!-- columnas opcionales -->
-					<p>
-						<h3>columna 4</h3>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi repudiandae saepe, porro possimus doloremque accusamus, ipsum earum odio reprehenderit sint doloribus adipisci veritatis, vero. Ipsa commodi assumenda rerum corrupti aliquid!
-					</p>
-					{% endblock %}
-				
+{% endblock %}
