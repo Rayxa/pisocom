@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load bootstrap3 %}
+
+{% block content %}
+
+<div class="container">
+	<h2>Hola de nuevo, {{user.username}}!</h2>
+	<p><a href="/profile/edit" disabled=true>Editar perfil</a></p>
+	<p><a class="text-muted" disabled=true>Añadir casa</a></p>
+	<p><a class="text-muted" disabled=true>Buscar casa</a></p>
+	<p><a class="text-muted" disabled=true>Buscar compañeros de piso</a></p>
+	<p><a href="/accounts/logout">Cerrar sesión</a></p>
+</div>
+
+{% endblock %}
