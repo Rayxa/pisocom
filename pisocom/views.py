@@ -43,4 +43,4 @@ def register(request):
 	return render(request, 'accounts/register/register.html', {'form': form})
 
 def user_created(request):
-	return render(request, 'accountsr/register/user_created.html', {})
+	return render(request, 'accounts/register/user_created.html', {})

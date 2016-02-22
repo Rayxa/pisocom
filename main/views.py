@@ -13,7 +13,6 @@ def main(request):
 
 @login_required
 def edit_profile(request):
-
     # Comprobar si el usuario ya tiene un perfil creado
     try:
         profile = request.user.profile
