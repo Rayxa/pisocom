@@ -13,6 +13,7 @@ class descripcion(models.Model):
 
 
 class casa(models.Model):
+    title = models.CharField(max_length=20)
     author = models.ForeignKey('auth.User')
     numHabitaciones = models.IntegerField(default=1)
     precio = models.IntegerField()

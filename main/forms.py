@@ -8,4 +8,4 @@ class casaForm(forms.ModelForm):
 
     class Meta:
         model = casa
-        fields = ('numHabitaciones','author','precio',)
+        fields = ('title', 'author')

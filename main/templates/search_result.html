@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Resultados de busqueda
+{% endblock %}
+
+{% block content %}
+	{% for casa in casas %}
+		<div style="margin:10px;border: 2px solid blue;border-radius: 5px;background-color:#7fffd4; width:50%" class="casa">
+			<div class="date">
+				{% if casa.published_date %}
+					<p>Published: {{ casa.published_date }}</p>
+				{% endif %}
+					<p>   Author:  {{casa.author}}</p>
+			</div>
+			<div class="general" style="display:inline-block">
+				<h1><a>{{ casa.title }}</a></h1>
+				<p>Habitaciones: {{ casa.numHabitaciones }}</p>
+				<p>GastosIncluidos: {% if casa.gastosIncluidos %} <a>Sí</a> {% else %} <a>No</a> {% endif %}</p>
+			</div>
+			<div class="descripcion" style="float:right;width:200px;display:inline-block;border-radius: 3px;background-color:#008b8b">							
+				<h4>Descripcion</h4>
+				<p>Pais:      {{casa.descripcion.pais}}
+				Comunidad: {{casa.descripcion.comunidadAutonoma}}
+				Provincia: {{casa.descripcion.provincia}}
+				Cod.Post.: {{casa.descripcion.codigoPostal}}
+				Localidad: {{casa.descripcion.ciudad}}</p>
+			</div>			
+		</div>
+	{% endfor %}
+{% endblock %}
